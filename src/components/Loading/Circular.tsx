@@ -10,7 +10,7 @@ interface Props {
 const Circular = ({ inComponent, test }: Props) => {
   return (
     <div className="text-center">
-
+      loading...
     </div>
   );
 }

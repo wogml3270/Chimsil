@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from './Footer.module.scss'
 
 type Props = {}

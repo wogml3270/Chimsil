@@ -1,3 +1,4 @@
+
 .header {
   display: flex;
   justify-content: space-around;
@@ -10,7 +11,7 @@
     text-decoration: none;
   }
 
-  & :hover {
+  & > a:hover {
     color: var(--header-text-hover);
     transition: all .5s;
   }

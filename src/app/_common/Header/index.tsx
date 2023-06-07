@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from './Header.module.scss';
 import Link from 'next/link';
 

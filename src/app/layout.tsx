@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import '@/styles/globals.scss';
-import styled from './index.module.scss';
+import styled from './global.module.scss';
 import { Inter } from 'next/font/google';
 
 import Header from '@/app/_common/Header/index';
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className={styled.global_container}>
+        <div className={styled.global__container}>
           <Suspense fallback={null}>
             <Header />
           </Suspense>
