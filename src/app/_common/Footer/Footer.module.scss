@@ -1,9 +1,11 @@
 
 .footer {
-  width: 100%;
+  background-color: var(--color-black);
   position: fixed;
   bottom: 0;
-  background-color: var(--color-black)
+  max-width: var(--container-max-width);
+  min-width: var(--container-min-width);
+  width: 100%;
 }
 
 .footer__wrap{

@@ -1,10 +1,12 @@
 
 .global__container {
-  max-width: 100%;
-  min-width: 280px;
-  height: 100vh;
+  margin: auto;
+  max-width: var(--container-max-width);
+  min-width: var(--container-min-width);
 }
 
 .container {
-  padding: 20px;
+  padding: 2rem;
+  max-width: var(--container-max-width);
+  min-width: var(--container-min-width);
 }

@@ -5,8 +5,8 @@ type Props = {}
 
 const Header = (props: Props) => {
   return (
-    <nav>
-      <div className={styled.header}>
+    <nav className={styled.header}>
+      <div className={styled.header__nav}>
         <Link href="/">Home</Link>
         <Link href="/about">about</Link>
         <Link href="/photo">photo</Link>

@@ -1,10 +1,16 @@
 
 .header {
+  width: 100%;
+}
+
+.header__nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  gap: 3rem;
   align-items: center;
   height: 60px;
   background-color: var(--header-bg-color);
+  padding-left: 2rem;
 
   & > a {
     color: var(--header-text-color);
@@ -13,6 +19,7 @@
 
   & > a:hover {
     color: var(--header-text-hover);
+    text-decoration: underline;
     transition: all .5s;
   }
 }
