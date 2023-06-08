@@ -11,27 +11,36 @@ interface DataItem {
 
 const Home: React.FC = () => {
   const [data, setData] = useState<DataItem[]>([]);
+  const [error, setError] = useState<String>('');
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`http://localhost:8080/api/posts`);
-      const jsonData = await res.json();
-      setData(jsonData);
+      try {
+        const res = await fetch(`http://localhost:8080/api/posts`);
+        if (!res.ok) {
+          throw new Error('Faild to fetch data');
+        }
+        const jsonData = await res.json();
+        setData(jsonData);
+      } catch (error: any) {
+        setError(error.message);
+      }
     }
     fetchData();
   }, [])
 
-  console.log(data)
-
+  console.log(data);
 
   return (
     <>
       <div className={styled.home}>
         <h1>Home page</h1>
-        <div>
-          {data.map((item) => (
-            <p key={item.id}>{item.title}</p>
-          ))}
+        <div style={{ marginTop: '30px' }}>
+          {error ? (
+            <p style={{ color: 'red' }}>{error}</p>
+          ) : (
+            data.map((item) => <p key={item.id}>{item.title}</p>)
+          )}
         </div>
       </div>
     </>
