@@ -18,7 +18,7 @@ const Home: React.FC = () => {
       try {
         const res = await fetch(`http://localhost:8080/api/posts`);
         if (!res.ok) {
-          throw new Error('Faild to fetch data');
+          throw new Error('데이터를 불러오는데 실패하였습니다.');
         }
         const jsonData = await res.json();
         setData(jsonData);
