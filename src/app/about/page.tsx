@@ -1,27 +1,25 @@
-'use clinet'
-import React, { useState, useEffect } from 'react';
+'use client'
+import React, { useEffect } from 'react';
 import api from '@/api/authApi';
 
-interface Props {
-  MyData: any;
-}
+const About = () => {
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-const about = (props: Props) => {
-  async function fetchData(){
+  async function fetchData() {
     try {
       const data = await api({
         method: 'GET',
         url: 'http://localhost:8080/api/posts',
       });
-      console.log('API response: ', data);
-    } catch (error: any){
-      console.error('API request failed: ', error);
+      console.log('API response:', data);
+    } catch (error: any) {
+      console.error('API request failed:', error);
     }
   }
-  fetchData();
-  return (
-    <div>about page</div>
-  )
-}
 
-export default about;
+  return <div>about page</div>;
+};
+
+export default About;

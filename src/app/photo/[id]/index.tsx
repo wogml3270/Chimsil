@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-const index = ({ photo }: any) => {
+const Index = ({ photo }: any) => {
   const router = useRouter();
   const { title, url } = photo
   return (
@@ -47,4 +47,4 @@ export const getStaticPaths = async () => {
   }
 }
 
-export default index
+export default Index
