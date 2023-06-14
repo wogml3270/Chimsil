@@ -21,7 +21,7 @@ async function api<T>(config: AxiosRequestConfig): Promise<T> {
     }
   } catch (error: any) {
     // API 호출 중에 발생한 오류를 처리
-    throw new Error('API request failed: ' + error.message);
+    throw new Error('API request failed: ', error.message);
   }
 }
 
