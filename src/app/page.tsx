@@ -34,12 +34,16 @@ const Home: React.FC = () => {
   return (
     <>
       <div className={styled.home}>
-        <h1>Home page</h1>
-        <div style={{ marginTop: '30px' }}>
+        <div>
           {error ? (
-            <p style={{ color: 'red' }}>{error}</p>
+            <p className={styled.error}>{error}</p>
           ) : (
-            data.map((item) => <p key={item.id}>{item.title}</p>)
+            data.map((item) => (
+              <div key={item.id} className={styled.contents_box}>
+                <h1>{item.title}</h1>
+                <p>{item.body}</p>
+              </div>
+            ))
           )}
         </div>
       </div>
